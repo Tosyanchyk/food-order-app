@@ -1,0 +1,10 @@
+
+@mixin r($minSize, $maxSize: false)
+
+  @if $minSize and $maxSize
+    @media only screen and (min-width: $minSize + 'px') and (max-width: $maxSize + 'px')
+      @content
+
+  @else
+    @media only screen and (min-width: $minSize + 'px')
+      @content

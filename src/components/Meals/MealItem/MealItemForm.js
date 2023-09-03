@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 
 import Input from '../../UI/Input';
-import classes from './MealItemForm.module.css';
+import s from './MealItemForm.module.sass';
 
 const MealItemForm = (props) => {
   const [amountIsValid, setAmountIsValid] = useState(true);
@@ -26,7 +26,7 @@ const MealItemForm = (props) => {
   };
 
   return (
-    <form className={classes.form} onSubmit={submitHandler}>
+    <form className={s.form} onSubmit={submitHandler}>
       <Input
         ref={amountInputRef}
         label='Amount'

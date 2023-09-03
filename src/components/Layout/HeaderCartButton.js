@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 
 import CartIcon from '../Cart/CartIcon';
 import CartContext from '../../store/cart-context';
-import classes from './HeaderCartButton.module.css';
+import s from './HeaderCartButton.module.sass';
 
 const HeaderCartButton = (props) => {
   const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
@@ -14,7 +14,7 @@ const HeaderCartButton = (props) => {
     return curNumber + item.amount;
   }, 0);
 
-  const btnClasses = `${classes.button} ${btnIsHighlighted ? classes.bump : ''}`;
+  const btnClasses = `${s.button} ${btnIsHighlighted ? s.bump : ''}`;
 
   useEffect(() => {
     if (items.length === 0) {
@@ -33,11 +33,11 @@ const HeaderCartButton = (props) => {
 
   return (
     <button className={btnClasses} onClick={props.onClick}>
-      <span className={classes.icon}>
+      <span className={s.icon}>
         <CartIcon />
       </span>
       <span>Your Cart</span>
-      <span className={classes.badge}>{numberOfCartItems}</span>
+      <span className={s.badge}>{numberOfCartItems}</span>
     </button>
   );
 };
