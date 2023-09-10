@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 
 import './index.sass';
 import App from './App';

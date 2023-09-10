@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 
 import s from './Modal.module.sass';
 
