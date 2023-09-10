@@ -9,6 +9,7 @@ import s from './AvailableMeals.module.sass';
 const AvailableMeals = () => {
 
   const [meals, setMeals] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);//not for all cases just for that
 
   useEffect(() => {
     const fetchMeals = async() => {
@@ -27,9 +28,16 @@ const AvailableMeals = () => {
       }
 
       setMeals(loadedMeals);
+      setIsLoading(false);
     };
     fetchMeals();
 }, []);
+
+if (isLoading){
+  return <section className={s.MealsLoading}>
+    <p>LOADING...</p>
+  </section>
+}
 
 const mealsList = meals.map((meal) => (
   <MealItem
